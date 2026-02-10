@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amelia | Florería</title>
+  <link rel="icon" type="image/svg+xml" href="Imágenes/Inicio/Bellafiora_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- CSS combinados -->
+  <link rel="stylesheet" href="CSS/inicio.css">
+  <link rel="stylesheet" href="CSS/catalago.css">
+  <!-- JS combinados -->
+  <script src="JS/inicio.js" defer></script>
+  <script src="JS/catalogo.js" defer></script>
+  <script src="JS/carrito.js" defer></script>
+  <script src="JS/auth.js" defer></script>
+  <link rel="stylesheet" href="CSS/auth.css">
+
+</head>
+<!-- MODAL LOGIN / REGISTRO -->
+<div class="auth-modal hidden" id="authModal">
+  <div class="auth-modal-backdrop"></div>
+
+  <div class="auth-modal-dialog">
+    <button class="auth-close" id="authCloseBtn" type="button">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <h2 class="auth-title">Mi cuenta</h2>
+
+    <div class="auth-tabs">
+      <button class="auth-tab auth-tab-active" data-auth-tab="login">Iniciar sesión</button>
+      <button class="auth-tab" data-auth-tab="signup">Crear cuenta</button>
+    </div>
+
+    <!-- LOGIN -->
+    <form id="loginForm" class="auth-form auth-form-active">
+      <div class="auth-group">
+        <label for="loginEmail">Correo electrónico</label>
+        <input type="email" id="loginEmail" placeholder="ejemplo@correo.com" required>
+      </div>
+      <div class="auth-group">
+        <label for="loginPassword">Contraseña</label>
+        <input type="password" id="loginPassword" placeholder="Tu contraseña" required>
+      </div>
+      <p class="auth-msg" id="loginMsg"></p>
+      <button type="submit" class="auth-btn-primary">Entrar</button>
+    </form>
+
+    <!-- SIGN UP -->
+    <form id="signupForm" class="auth-form">
+      <div class="auth-group">
+        <label for="signupName">Nombre completo</label>
+        <input type="text" id="signupName" placeholder="Ej: María García López" required>
+      </div>
+      <div class="auth-group">
+        <label for="signupEmail">Correo electrónico</label>
+        <input type="email" id="signupEmail" placeholder="ejemplo@correo.com" required>
+      </div>
+      <div class="auth-group">
+        <label for="signupPassword">Contraseña</label>
+        <input type="password" id="signupPassword" placeholder="Mínimo 6 caracteres" required>
+      </div>
+      <p class="auth-msg" id="signupMsg"></p>
+      <button type="submit" class="auth-btn-primary">Crear cuenta</button>
+    </form>
+  </div>
+</div>
+
+<body class="inicio">
+
+  <body>
+    <!-- BANNER SUPERIOR -->
+    <div class="banner">
+      <div class="banner-content">
+        <div class="content-info">
+          <p><i class="fa-solid fa-phone"></i> +51 915 995 014</p>
+        </div>
+        <p class="envio-express"><i class="fas fa-shipping-fast"></i> !Entrega inmediata</p>
+        <div class="social-links">
+          <!--<a href="https://www.facebook.com/share/1H35dWxqw6/" class="btn-social-link"><i
+              class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/bellafioramty?igsh=MW5zd25jbzZoNHFjeA==" class="btn-social-link"><i
+              class="fa-brands fa-instagram"></i></a>-->
+        </div>
+      </div>
+    </div>
+
+    <!-- MENÚ Y NAVEGACIÓN -->
+    <header>
+      <input type="checkbox" id="toggler">
+      <label for="toggler" class="fas fa-bars"></label>
+
+      <a href="#home" class="logofloreria"><img src="Imágenes/Inicio/Bellafiora_logo.png"></a>
+
+      <nav class="navbar">
+        <a href="#home">Inicio</a>
+        <a href="#about">Nosotros</a>
+
+        <div class="dropdown">
+          <button class="dropdown-btn" type="button" aria-expanded="false">Arreglos Florales</button>
+          <div class="dropdown-content" role="menu">
+            <a href="#ramos-florales" role="menuitem">Ramos Florales</a>
+            <a href="#san-valentin" role="menuitem">San Valentín</a>
+          </div>
+        </div>
+
+        <a href="#Contacto">Contacto</a>
+      </nav>
+
+      <!--<div class="icons">
+        <a id="cart-icon" href="carrito.html" class="fas fa-shopping-cart" aria-label="Carrito">
+          <span id="cartBadge"></span>
+        </a>
+        <a href="#" class="fas fa-user" aria-label="Cuenta" id="headerUserBtn"></a>
+        <span id="headerUserLabel" style="display:none; font-size:1.4rem; margin-left:0.5rem;"></span>
+        <button id="logoutBtn"
+          style="display:none; font-size:1.2rem; margin-left:0.5rem; background:none; border:none; cursor:pointer;">
+          Cerrar sesión
+        </button>
+      </div>-->
+
+
+
+    </header>
+
+    <!-- INICIO SECTION -->
+    <section class="home" id="home">
+      <div class="carousel-background">
+        <div class="slide active">
+          <img src="Imágenes/Inicio/Fondo 1.jpg" alt="Fondo 1 arreglos florales">
+        </div>
+        <div class="slide">
+          <img src="Imágenes/Inicio/Fondo 2.jpg" alt="Fondo 2 arreglos florales">
+        </div>
+        <div class="slide">
+          <img src="Imágenes/Inicio/Fondo 3.jpg" alt="Fondo 3 arreglos florales">
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+      </div>
+
+      <div class="content">
+        <h3>✨ ¡Regala Amor que Nunca se Marchita! ✨</h3>
+        <p>Este 14 de febrero, deja que nuestras <strong>flores eternas</strong> hablen por ti. Sorprende a esa persona
+          especial con un detalle único hecho a mano, diseñado para recordarles cada día cuánto los quieres.</p>
+      </div>
+
+    </section>
+
+    <!-- NOSOTROS SECTION -->
+    <section class="about" id="about">
+      <h1 class="heading"><span>Nuestra Pasión</span></h1>
+
+      <div class="row">
+        <div class="imagen-container">
+          <img src="Imágenes/Inicio/Flor_morada.png" alt="Ramos Sarahi Amelia">
+          <h3>✨ "Tu confianza es nuestro motor"</h3>
+        </div>
+
+        <div class="content">
+          <h3>Hacemos que tu persona especial se sienta única</h3>
+          <p>
+            ¡Hola! Soy <strong>Sarai Amelia Araujo Felipe</strong>. Iniciamos este camino con un compromiso inquebrantable: ser el
+            puente entre tus sentimientos y esa persona que tanto quieres. Sabemos que no solo entregas flores, entregas
+            un abrazo, una disculpa o un "te amo". Por eso, nosotros nos obsesionamos con que cada pétalo llegue
+            perfecto.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <i class="fas fa-star"></i>
+              <div class="feature-text">
+                <strong>Compromiso Total</strong>
+                <span>Cuidamos tu envío como si fuera para nuestra propia familia.</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <i class="fas fa-palette"></i>
+              <div class="feature-text">
+                <strong>Pasión en cada Ramo</strong>
+                <span>Cada arreglo es diseñado a mano</span>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <i class="fas fa-shield-alt"></i>
+              <div class="feature-text">
+                <strong>Entrega Segura</strong>
+                <span>Nos aseguramos de que tu sorpresa llegue impecable y puntual.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#catalogo" class="btn">¡Compra ahora!</a>
+          <a href="https://wa.me/51915995014?text=Hola!%20Me%20gustaría%20conocer%20sus%20productos.%20Quisiera%20información%20sobre:%0A%0A%20*Sus%20Arreglos%20Florales:*%0A%0A%20Rosa%20y%20Margarita%20-%20S/79.99%0A%20Girasol%20y%20Margarita%20-%20S/69.99%0A%20Rosa%20y%20Margarita%20Especial%20-%20S/79.99%0A%20Rosa%20azul%20y%20Margarita%20-%20S/69.99%0A%20Lirios%20y%20Rosa%20Morada%20-%20S/79.99%0A%20Lirios%20y%20Rosa%20Rosado%20-%20S/109.99%0A%0A¿Cuál%20me%20recomiendas?" class="btn" target="_blank">¡Sorprende a alguien hoy!</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CATÁLOGO SECTION -->
+    <main class="catalogo" id="catalogo">
+      <h1 class="page-title">Catálogo</h1>
+
+      <div class="catalogo-toolbar">
+        <div class="buscador" role="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="searchInput" type="search" placeholder="Buscar productos…" aria-label="Buscar productos" />
+        </div>
+        <div class="toolbar-meta">
+          <span id="countLabel">0 productos</span>
+        </div>
+      </div>
+
+      <div class="catalogo-layout">
+        <section id="productGrid" aria-live="polite" aria-busy="false">
+          <!-- Tarjetas por JS -->
+        </section>
+      </div>
+    </main>
+
+    <!-- TEMPLATE DE TARJETA -->
+    <template id="tplCard">
+      <article class="card">
+        <div class="card-img-wrap">
+          <img class="card-img" alt="" />
+          <span class="badge-oferta" hidden>EN OFERTA</span>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"></h4>
+          <p class="card-desc"></p>
+          <div class="card-price-row">
+            <span class="card-price"></span>
+            <span class="card-price-old" hidden></span>
+          </div>
+          <div class="card-cta">
+            <button class="btn-add" type="button">¡Compra ahora!</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <!-- ICONOS - ENVÍO, PAGO Y PRODUCTOS EXTRA -->
+    <section class="icons-container">
+      <div class="icons">
+        <img src="Imágenes/Inicio/icono 1.jpg" alt="Entrega a domicilio">
+        <div class="content-info">
+          <h3>Entraga segura e inmediata</h3>
+          <span>Todo centro de huancayo</span>
+          <span>Con costo extra</span>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="Imágenes/Inicio/icono 2.jpg" alt="Pago contra-entrega y transferencia">
+        <div class="content-info">
+          <h3>Pago contra-entrega y yape</h3>
+          <span>Compra segura</span>
+        </div>
+      </div>
+      <div class="icons">
+        <img src="Imágenes/Inicio/icono 3.jpg" alt="Productos extra">
+        <div class="content-info">
+          <h3>Productos extra</h3>
+          <span>¡Chocolates y Peluches!</span>
+          <span>Con costo extra</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO SECTION -->
+    <section class="contact" id="Contacto">
+      <h1 class="heading"><span>Contacto</span></h1>
+      <div class="row">
+        <div class="contact-info">
+          <h3>¡Entrega en todo Centro Huancayo!</h3>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Dirección</strong>
+              <p>Parque constitución huancayo<br></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Teléfono</strong>
+              <p>+51 915 995 014</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Horarios</strong>
+              <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábado: 10:00 AM - 4:00 PM<br></p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-store"></i>
+            <div>
+              <strong>Florería</strong>
+              <p>Tu floristería de confianza en el corazón de huancayo</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7803.284377012179!2d-75.2196068!3d-12.0681219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964f02c2119b%3A0x3d691fe5db0982cf!2sPlaza%20de%20la%20Constituci%C3%B3n!5e0!3m2!1ses!2spe!4v1770725557174!5m2!1ses!2spe"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="checkout-footer">
+      <div class="footer-content">
+        <p>© 2026 Florería Amelia. Hecho con ❤️ en Huancayo.</p>
+        <div class="footer-links">
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Política de devoluciones</a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

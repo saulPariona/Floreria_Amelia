@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amelia | Carrito</title>
+  <link rel="icon" type="image/svg+xml" href="Imágenes/Inicio/Bellafiora_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="CSS/inicio.css"><!-- tu CSS base -->
+  <link rel="stylesheet" href="CSS/carrito.css"><!-- estilos del carrito -->
+  <script src="JS/carrito.js" defer></script><!-- lógica del carrito -->
+</head>
+
+<body class="carrito">
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-content">
+      <div class="content-info">
+        <p><i class="fa-solid fa-phone"></i> +52 (81 3686 5274)</p>
+      </div>
+      <p class="envio-express"><i class="fas fa-shipping-fast"></i> ¡Envíos express en Monterrey!</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1H35dWxqw6/" class="btn-social-link"><i
+            class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/bellafioramty?igsh=MW5zd25jbzZoNHFjeA==" class="btn-social-link"><i
+            class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="index.html" class="logofloreria"><img src="Imágenes/Inicio/Bellafiora_logo.png" alt="Bellafiora"></a>
+
+    <nav class="navbar">
+      <a href="index.html#home">Inicio</a>
+      <a href="index.html#about">Nosotros</a>
+
+      <div class="dropdown">
+        <a href="index.html#catalogo" class="dropdown-btn">Arreglos Florales</a>
+        <div class="dropdown-content">
+          <a href="#">Ramos Florales</a>
+          <a href="#">San Valentín</a>
+        </div>
+      </div>
+      <a href="index.html#Contacto">Contacto</a>
+    </nav>
+
+    <div class="icons">
+      <a id="cart-icon" href="carrito.html" class="fas fa-shopping-cart" aria-label="Carrito"></a>
+      <a href="#" class="fas fa-user" aria-label="Cuenta" id="headerUserBtn"></a>
+      <span id="headerUserLabel" style="display:none; font-size:1.4rem; margin-left:0.5rem;"></span>
+      <button id="logoutBtn"
+        style="display:none; font-size:1.2rem; margin-left:0.5rem; background:none; border:none; cursor:pointer;">
+        Cerrar sesión
+      </button>
+    </div>
+
+  </header>
+
+  <!-- MAIN: CARRITO -->
+  <main class="cart-page">
+    <h1 class="cart-title">Contenido del carrito</h1>
+
+    <div class="cart-grid">
+      <!-- LISTA DE PRODUCTOS -->
+      <section class="cart-items">
+        <!-- Los items se inyectan desde JS -->
+      </section>
+
+      <!-- RESUMEN / ENVÍO -->
+      <aside class="cart-summary">
+        <div class="shipping">
+          <label for="shippingSelect">Envío</label>
+          <select id="shippingSelect">
+            <option value="0">Retiro en tienda — $0.00</option>
+            <option value="89">Envío express — $89</option>
+          </select>
+          <small class="shipping-note">
+            <i class="fa-solid fa-circle-info"></i>
+            El costo del envío express es el mismo para cada zona.
+          </small>
+        </div>
+
+        <!-- 🔹 Resumen compacto de artículos -->
+        <div class="resumen-compacto">
+          <ul id="resumen-items" class="resumen-items"></ul>
+        </div>
+
+        <div class="totals">
+          <div class="row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+          <div class="row"><span>Envío</span><span id="shipCost">$0.00</span></div>
+          <div class="row grand"><span>Total</span><span id="grandTotal">$0.00</span></div>
+        </div>
+
+        <div class="actions">
+          <a href="index.html#ramos-florales" class="btn-ghost">
+            <i class="fa-solid fa-arrow-left"></i> Continuar comprando
+          </a>
+
+          <button id="checkout" class="btn-primary">
+            <i class="fa-solid fa-lock"></i> Proceder al Checkout
+          </button>
+
+          <!-- 🔹 Botón para vaciar carrito -->
+          <button id="clearCart" class="btn-ghost btn-clear">
+            <i class="fa-solid fa-trash-can"></i> Vaciar carrito
+          </button>
+        </div>
+
+
+        <div class="secure">
+          <i class="fa-solid fa-shield-halved"></i> Transacción segura
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="checkout-footer">
+    <div class="footer-content">
+      <p>© 2026 Florería Amelia AF. Hecho con ❤️ en Huancayo.</p>
+      <div class="footer-links">
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Política de devoluciones</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

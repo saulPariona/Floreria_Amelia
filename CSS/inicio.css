@@ -970,6 +970,50 @@ body.carrito header {
   font-size: 1.3rem;
 }
 
+/* ========== SECCIÓN RECUERDA ========== */
+.remember {
+  background: var(--rosa-banner);
+  padding: 4rem 4%;
+  margin: 2rem 0;
+}
+
+.remember .remember-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.remember-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--blanco);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 .5rem 1rem var(--sombra-clara);
+  transition: transform .3s ease;
+}
+
+.remember-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 .8rem 2rem var(--sombra-suave);
+}
+
+.remember-item i {
+  font-size: 3rem;
+  color: var(--rosafuerte);
+  flex-shrink: 0;
+}
+
+.remember-item p {
+  font-size: 1.7rem;
+  color: var(--negro);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 /* ========== SECCIÓN DE CLIENTES (REVIEW) ========== */
 .review .box-container {
   display: flex;

@@ -1,0 +1,61 @@
+/* ===========================
+   SPLASH SCREEN - VIDEO INTRO
+   =========================== */
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 1;
+    transition: opacity 0.8s ease-out;
+}
+
+.splash-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.splash-screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+/* Ocultar el contenido principal mientras se muestra el splash */
+body.splash-active {
+    overflow: hidden;
+}
+
+body.splash-active .main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+body.splash-loaded .main-content {
+    opacity: 1;
+}
+
+/* Animación de entrada suave para el contenido */
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.splash-loaded .main-content {
+    animation: fadeInContent 0.8s ease-out;
+}

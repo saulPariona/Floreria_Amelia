@@ -35,6 +35,54 @@ const PRODUCTS = [
     img: "Imágenes/catalogo/Girasol.jpeg"
   },
   {
+    id: "g2",
+    nombre: "1 Rosa",
+    desc: "1 Rosa tejida en color rojo.(1 rosa,Envoltura negro, cinta negra)",
+    precio: 13,
+    categoria: "San Valentín",
+    tipo: "Girasoles",
+    etiquetas: ["Popular", "Rojo"],
+    oferta: true,
+    precioAntes: 18,
+    img: "Imágenes/catalogo/1Rosa.jpg"
+  },
+  {
+    id: "g3",
+    nombre: "Lirio Eterno Azul",
+    desc: "Lirio eterno tejido en color azul.(1 lirio,6 margaritas,1 eucalipto,Envoltura negro, cinta azul)",
+    precio: 21,
+    categoria: "San Valentín",
+    tipo: "Girasoles",
+    etiquetas: ["Popular", "Azul"],
+    oferta: true,
+    precioAntes: 26,
+    img: "Imágenes/catalogo/Rosa_Azul.jpg"
+  },
+  {
+    id: "g4",
+    nombre: "Ramo de tulipanes azules",
+    desc: "Ramo de tulipanes azules.(6 tulipanes,Envoltura negro, Dedicatoria Personalizada)",
+    precio: 27,
+    categoria: "San Valentín",
+    tipo: "Girasoles",
+    etiquetas: ["Popular", "Azul"],
+    oferta: true,
+    precioAntes: 32,
+    img: "Imágenes/catalogo/Rosa_Azules.jpg"
+  },
+  {
+    id: "g5",
+    nombre: "Ramo de Tulipanes Noche de Terciopelo",
+    desc: "Ramo de tulipanes y Rosas.(1 tulipanes,3 margaritas,3 rosas,1 eucalipto,Envoltura negro y blanco, cinta negra y blanca, Dedicatoria Personalizada)",
+    precio: 32,
+    categoria: "San Valentín",
+    tipo: "Girasoles",
+    etiquetas: ["Popular", "Azul"],
+    oferta: true,
+    precioAntes: 37,
+    img: "Imágenes/catalogo/Rosa_Negra.jpg"
+  },
+  {
     id: "t1",
     nombre: "Rosa y Margarita Especial",
     desc: "Gran Lirio central en tono borgoña aterciopelado con margaritas blancas a crochet. Presentación premium con papel coreano blanco.(1 Lirio,2 Tulipanes,6 Flores pequeñas, 1 eucalipto, Envoltorio coreano blanco,un lazo  lazo de satén)",

@@ -8,14 +8,19 @@
   <link rel="icon" type="image/svg+xml" href="Imágenes/Inicio/Bellafiora_logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <!-- CSS combinados -->
+  <!-- Splash Screen CSS -->
+  <link rel="stylesheet" href="CSS/splash.css">
+  <!-- CSS combinados -->
   <link rel="stylesheet" href="CSS/inicio.css">
   <link rel="stylesheet" href="CSS/catalago.css">
+  <link rel="stylesheet" href="CSS/auth.css">
+  <!-- Splash Screen JS (debe cargar primero) -->
+  <script src="JS/splash.js"></script>
   <!-- JS combinados -->
   <script src="JS/inicio.js" defer></script>
   <script src="JS/catalogo.js" defer></script>
   <script src="JS/carrito.js" defer></script>
   <script src="JS/auth.js" defer></script>
-  <link rel="stylesheet" href="CSS/auth.css">
 
 </head>
 <!-- MODAL LOGIN / REGISTRO -->
@@ -70,40 +75,51 @@
 
 <body class="inicio">
 
-  <body>
-    <!-- BANNER SUPERIOR -->
-    <div class="banner">
-      <div class="banner-content">
-        <div class="content-info">
-          <p><i class="fa-solid fa-phone"></i> +51 915 995 014</p>
-        </div>
-        <p class="envio-express"><i class="fas fa-shipping-fast"></i> !Entrega inmediata</p>
-        <div class="social-links">
-          <!--<a href="https://www.facebook.com/share/1H35dWxqw6/" class="btn-social-link"><i
+  <!-- SPLASH SCREEN - VIDEO INTRO -->
+  <div class="splash-screen" id="splashScreen">
+    <video id="splashVideo" playsinline>
+      <source src="video/Logo_Animado.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de videos.
+    </video>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="main-content">
+
+    <body>
+      <!-- BANNER SUPERIOR -->
+      <div class="banner">
+        <div class="banner-content">
+          <div class="content-info">
+            <p><i class="fa-solid fa-phone"></i> +51 915 995 014</p>
+          </div>
+          <p class="envio-express"><i class="fas fa-shipping-fast"></i> !Entrega inmediata</p>
+          <div class="social-links">
+            <!--<a href="https://www.facebook.com/share/1H35dWxqw6/" class="btn-social-link"><i
               class="fa-brands fa-facebook"></i></a>
           <a href="https://www.instagram.com/bellafioramty?igsh=MW5zd25jbzZoNHFjeA==" class="btn-social-link"><i
               class="fa-brands fa-instagram"></i></a>-->
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- MENÚ Y NAVEGACIÓN -->
-    <header>
-      <input type="checkbox" id="toggler">
-      <label for="toggler" class="fas fa-bars"></label>
+      <!-- MENÚ Y NAVEGACIÓN -->
+      <header>
+        <input type="checkbox" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
 
-      <a href="#home" class="logofloreria"><img src="Imágenes/Inicio/Bellafiora_logo.png"
-          alt="Logo Florería Amelia"></a>
+        <a href="#home" class="logofloreria"><img src="Imágenes/Inicio/Bellafiora_logo.png"
+            alt="Logo Florería Amelia"></a>
 
-      <nav class="navbar">
-        <a href="#home">Inicio</a>
-        <a href="#about">Nosotros</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#review">Clientes</a>
-        <a href="#Contacto">Contacto</a>
-      </nav>
+        <nav class="navbar">
+          <a href="#home">Inicio</a>
+          <a href="#about">Nosotros</a>
+          <a href="#catalogo">Catálogo</a>
+          <a href="#review">Clientes</a>
+          <a href="#Contacto">Contacto</a>
+        </nav>
 
-      <!--<div class="icons">
+        <!--<div class="icons">
         <a id="cart-icon" href="carrito.html" class="fas fa-shopping-cart" aria-label="Carrito">
           <span id="cartBadge"></span>
         </a>
@@ -117,390 +133,394 @@
 
 
 
-    </header>
+      </header>
 
-    <!-- INICIO SECTION -->
-    <section class="home" id="home">
-      <div class="carousel-background">
-        <div class="slide active">
-          <img src="Imágenes/Inicio/Fondo 1.jpg" alt="Fondo 1 arreglos florales">
+      <!-- INICIO SECTION -->
+      <section class="home" id="home">
+        <div class="carousel-background">
+          <div class="slide active">
+            <img src="Imágenes/Inicio/Fondo 1.jpg" alt="Fondo 1 arreglos florales">
+          </div>
+          <div class="slide">
+            <img src="Imágenes/Inicio/Fondo 2.jpg" alt="Fondo 2 arreglos florales">
+          </div>
+          <div class="slide">
+            <img src="Imágenes/Inicio/Fondo 3.jpg" alt="Fondo 3 arreglos florales">
+          </div>
         </div>
-        <div class="slide">
-          <img src="Imágenes/Inicio/Fondo 2.jpg" alt="Fondo 2 arreglos florales">
-        </div>
-        <div class="slide">
-          <img src="Imágenes/Inicio/Fondo 3.jpg" alt="Fondo 3 arreglos florales">
-        </div>
-      </div>
-      <div class="carousel-indicators">
-        <span class="indicator active" data-slide="0"></span>
-        <span class="indicator" data-slide="1"></span>
-        <span class="indicator" data-slide="2"></span>
-      </div>
-
-      <div class="content">
-        <h3>✨ ¡Regala Amor que Nunca se Marchita! ✨</h3>
-        <p>Este 14 de febrero, deja que nuestras <strong>flores eternas</strong> hablen por ti. Sorprende a esa persona
-          especial con un detalle único hecho a mano, diseñado para recordarles cada día cuánto los quieres.</p>
-      </div>
-
-    </section>
-
-    <!-- NOSOTROS SECTION -->
-    <section class="about" id="about">
-      <h1 class="heading"><span>Nuestra Pasión</span></h1>
-
-      <div class="row">
-        <div class="imagen-container">
-          <img src="Imágenes/Inicio/Flor_morada.png" alt="Ramos Sarahi Amelia">
-          <h3>✨ "Tu confianza es nuestro motor"</h3>
+        <div class="carousel-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
         </div>
 
         <div class="content">
-          <h3>Hacemos que tu persona especial se sienta única</h3>
-          <p>
-            ¡Hola! Soy <strong>Sarai Amelia Araujo Felipe</strong>. Iniciamos este camino con un compromiso
-            inquebrantable: ser el
-            puente entre tus sentimientos y esa persona que tanto quieres. Sabemos que no solo entregas flores, entregas
-            un abrazo, una disculpa o un "te amo". Por eso, nosotros nos obsesionamos con que cada pétalo llegue
-            perfecto.
-          </p>
+          <h3>✨ ¡Regala Amor que Nunca se Marchita! ✨</h3>
+          <p>Este 14 de febrero, deja que nuestras <strong>flores eternas</strong> hablen por ti. Sorprende a esa
+            persona
+            especial con un detalle único hecho a mano, diseñado para recordarles cada día cuánto los quieres.</p>
+        </div>
 
-          <div class="features-list">
-            <div class="feature-item">
+      </section>
+
+      <!-- NOSOTROS SECTION -->
+      <section class="about" id="about">
+        <h1 class="heading"><span>Nuestra Pasión</span></h1>
+
+        <div class="row">
+          <div class="imagen-container">
+            <img src="Imágenes/Inicio/Flor_morada.png" alt="Ramos Sarahi Amelia">
+            <h3>✨ "Tu confianza es nuestro motor"</h3>
+          </div>
+
+          <div class="content">
+            <h3>Hacemos que tu persona especial se sienta única</h3>
+            <p>
+              ¡Hola! Soy <strong>Sarai Amelia Araujo Felipe</strong>. Iniciamos este camino con un compromiso
+              inquebrantable: ser el
+              puente entre tus sentimientos y esa persona que tanto quieres. Sabemos que no solo entregas flores,
+              entregas
+              un abrazo, una disculpa o un "te amo". Por eso, nosotros nos obsesionamos con que cada pétalo llegue
+              perfecto.
+            </p>
+
+            <div class="features-list">
+              <div class="feature-item">
+                <i class="fas fa-star"></i>
+                <div class="feature-text">
+                  <strong>Compromiso Total</strong>
+                  <span>Cuidamos tu envío como si fuera para nuestra propia familia.</span>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <i class="fas fa-palette"></i>
+                <div class="feature-text">
+                  <strong>Pasión en cada Ramo</strong>
+                  <span>Cada arreglo es diseñado a mano</span>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <div class="feature-text">
+                  <strong>Entrega Segura</strong>
+                  <span>Nos aseguramos de que tu sorpresa llegue impecable y puntual.</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="#catalogo" class="btn">¡Sorprende a alguien hoy!</a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- CATÁLOGO SECTION -->
+      <main class="catalogo" id="catalogo">
+        <h1 class="page-title">Catálogo</h1>
+
+        <div class="catalogo-toolbar">
+          <div class="buscador" role="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="search" placeholder="Buscar productos…" aria-label="Buscar productos" />
+          </div>
+
+          <div class="filtros-container">
+            <div class="filtro-grupo">
+              <label for="categoriaFilter">
+                <i class="fa-solid fa-filter"></i> Categoría:
+              </label>
+              <select id="categoriaFilter" aria-label="Filtrar por categoría">
+                <option value="todas">Todas las categorías</option>
+                <option value="San Valentín">San Valentín</option>
+                <option value="Ramos Florales">Ramos Florales</option>
+              </select>
+            </div>
+
+            <div class="filtro-grupo">
+              <label for="ordenarPrecio">
+                <i class="fa-solid fa-sort-amount-down"></i> Ordenar:
+              </label>
+              <select id="ordenarPrecio" aria-label="Ordenar por precio">
+                <option value="default">Por defecto</option>
+                <option value="precio-asc">Precio: Menor a Mayor</option>
+                <option value="precio-desc">Precio: Mayor a Menor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="toolbar-meta">
+            <span id="countLabel">0 productos</span>
+          </div>
+        </div>
+
+        <div class="catalogo-layout">
+          <section id="productGrid" aria-live="polite" aria-busy="false">
+            <!-- Tarjetas por JS -->
+          </section>
+        </div>
+      </main>
+
+
+      <!-- TEMPLATE DE TARJETA -->
+      <template id="tplCard">
+        <article class="card">
+          <div class="card-img-wrap">
+            <img class="card-img" alt="" />
+            <span class="badge-oferta" hidden>EN OFERTA</span>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title"></h4>
+            <p class="card-desc"></p>
+            <div class="card-price-row">
+              <span class="card-price"></span>
+              <span class="card-price-old" hidden></span>
+            </div>
+            <div class="card-cta">
+              <button class="btn-add" type="button">¡Compra ahora!</button>
+            </div>
+          </div>
+        </article>
+      </template>
+
+      <!-- RECORDATORIO SECTION -->
+      <section class="remember" id="remember">
+        <h1 class="heading"><span>RECUERDA</span></h1>
+        <div class="remember-content">
+          <div class="remember-item">
+            <i class="fas fa-hand-holding-heart"></i>
+            <p>Todos los arreglos son hechos a mano</p>
+          </div>
+          <div class="remember-item">
+            <i class="fas fa-palette"></i>
+            <p>Los colores pueden variar ligeramente</p>
+          </div>
+          <div class="remember-item">
+            <i class="fas fa-percentage"></i>
+            <p>No se inicia ningún pedido sin adelanto del 50%</p>
+          </div>
+          <div class="remember-item">
+            <i class="fas fa-ban"></i>
+            <p>No se aceptan devoluciones una vez iniciado el trabajo</p>
+          </div>
+          <div class="remember-item">
+            <i class="fas fa-calendar-alt"></i>
+            <p>Cada pedido se realiza con un mínimo de 2 días de anticipación</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ICONOS - ENVÍO, PAGO Y PRODUCTOS EXTRA -->
+      <section class="icons-container">
+        <div class="icons">
+          <img src="Imágenes/Inicio/icono 1.jpg" alt="Entrega a domicilio">
+          <div class="content-info">
+            <h3>Entraga segura e inmediata</h3>
+            <span>Todo centro de huancayo</span>
+            <span>Con costo extra</span>
+          </div>
+        </div>
+        <div class="icons">
+          <img src="Imágenes/Inicio/icono 2.jpg" alt="Pago contra-entrega y transferencia">
+          <div class="content-info">
+            <h3>Pago efectivo y yape</h3>
+            <span>Compra segura</span>
+          </div>
+        </div>
+        <div class="icons">
+          <img src="Imágenes/Inicio/icono 3.jpg" alt="Productos extra">
+          <div class="content-info">
+            <h3>Productos extra</h3>
+            <span>¡Chocolates y Peluches!</span>
+            <span>Con costo extra</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- CLIENTES SATISFECHOS SECTION -->
+      <section class="review" id="review">
+        <h1 class="heading"><span>Clientes Satisfechos</span></h1>
+        <div class="box-container">
+          <div class="box">
+            <div class="stars">
               <i class="fas fa-star"></i>
-              <div class="feature-text">
-                <strong>Compromiso Total</strong>
-                <span>Cuidamos tu envío como si fuera para nuestra propia familia.</span>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Las flores llegaron en el tiempo acordado y el arreglo era tal cual la foto. A mi mamá le encantaron
+              mucho. ¡Altamente recomendados!"</p>
+            <div class="user">
+              <i class="fas fa-user-circle"></i>
+              <div class="user-info">
+                <h3>Alejandro García Mendoza</h3>
+                <span>Cliente Satisfecho</span>
               </div>
             </div>
+            <span class="fas fa-quote-right"></span>
+          </div>
 
-            <div class="feature-item">
-              <i class="fas fa-palette"></i>
-              <div class="feature-text">
-                <strong>Pasión en cada Ramo</strong>
-                <span>Cada arreglo es diseñado a mano</span>
+          <div class="box">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Excelente servicio y entrega puntual en Huancayo. El proceso de compra por la web fue muy sencillo y
+              rápido."</p>
+            <div class="user">
+              <i class="fas fa-user-circle"></i>
+              <div class="user-info">
+                <h3>Sofía Rodríguez Castro</h3>
+                <span>Cliente Satisfecho</span>
               </div>
             </div>
+            <span class="fas fa-quote-right"></span>
+          </div>
 
-            <div class="feature-item">
-              <i class="fas fa-shield-alt"></i>
-              <div class="feature-text">
-                <strong>Entrega Segura</strong>
-                <span>Nos aseguramos de que tu sorpresa llegue impecable y puntual.</span>
+          <div class="box">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Los arreglos son hermosos, se nota el amor que le ponen a cada detalle. Sin duda volveré a comprar aquí
+              para mis fechas especiales."</p>
+            <div class="user">
+              <i class="fas fa-user-circle"></i>
+              <div class="user-info">
+                <h3>Mateo Fernández Silva</h3>
+                <span>Cliente Satisfecho</span>
+              </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+          </div>
+
+          <div class="box">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Increíble calidad. Me sorprendió gratamente el servicio al cliente."</p>
+            <div class="user">
+              <i class="fas fa-user-circle"></i>
+              <div class="user-info">
+                <h3>Valentina López Herrera</h3>
+                <span>Cliente Satisfecho</span>
+              </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+          </div>
+
+          <div class="box">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Muy buena atención, resolvieron todas mis dudas por WhatsApp de inmediato. ¡El pedido llegó perfecto!"
+            </p>
+            <div class="user">
+              <i class="fas fa-user-circle"></i>
+              <div class="user-info">
+                <h3>Sebastián Martínez Rojas</h3>
+                <span>Cliente Satisfecho</span>
+              </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+          </div>
+
+          <div class="box">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"Lo que más valoro es la calidez humana; me asesoraron por WhatsApp con mucha paciencia.
+              Se nota la dedicación en cada detalle, ¡mi pedido llegó impecable y antes de lo esperado!"</p>
+            <div class="user">
+              <i class="fas fa-user-circle"></i>
+              <div class="user-info">
+                <h3>Andrés Mendoza Reyes</h3>
+                <span>Cliente Satisfecho</span>
+              </div>
+            </div>
+            <span class="fas fa-quote-right"></span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACTO SECTION -->
+      <section class="contact" id="Contacto">
+        <h1 class="heading"><span>Contacto</span></h1>
+        <div class="row">
+          <div class="contact-info">
+            <h3>¡Entrega en todo Centro Huancayo!</h3>
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Dirección</strong>
+                <p>Parque constitución huancayo<br></p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Teléfono</strong>
+                <p>+51 915 995 014</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Horarios</strong>
+                <p>Todos los dias 9:00 AM - 6:00 PM, solo escribenos al +51 915 995 014</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-store"></i>
+              <div>
+                <strong>Florería</strong>
+                <p>Tu floristería de confianza en el corazón de huancayo</p>
               </div>
             </div>
           </div>
-
-          <a href="#catalogo" class="btn">¡Sorprende a alguien hoy!</a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- CATÁLOGO SECTION -->
-    <main class="catalogo" id="catalogo">
-      <h1 class="page-title">Catálogo</h1>
-
-      <div class="catalogo-toolbar">
-        <div class="buscador" role="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="searchInput" type="search" placeholder="Buscar productos…" aria-label="Buscar productos" />
-        </div>
-
-        <div class="filtros-container">
-          <div class="filtro-grupo">
-            <label for="categoriaFilter">
-              <i class="fa-solid fa-filter"></i> Categoría:
-            </label>
-            <select id="categoriaFilter" aria-label="Filtrar por categoría">
-              <option value="todas">Todas las categorías</option>
-              <option value="San Valentín">San Valentín</option>
-              <option value="Ramos Florales">Ramos Florales</option>
-            </select>
-          </div>
-
-          <div class="filtro-grupo">
-            <label for="ordenarPrecio">
-              <i class="fa-solid fa-sort-amount-down"></i> Ordenar:
-            </label>
-            <select id="ordenarPrecio" aria-label="Ordenar por precio">
-              <option value="default">Por defecto</option>
-              <option value="precio-asc">Precio: Menor a Mayor</option>
-              <option value="precio-desc">Precio: Mayor a Menor</option>
-            </select>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7803.284377012179!2d-75.2196068!3d-12.0681219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964f02c2119b%3A0x3d691fe5db0982cf!2sPlaza%20de%20la%20Constituci%C3%B3n!5e0!3m2!1ses!2spe!4v1770725557174!5m2!1ses!2spe"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
+      </section>
 
-        <div class="toolbar-meta">
-          <span id="countLabel">0 productos</span>
+      <!-- FOOTER -->
+      <footer class="checkout-footer">
+        <div class="footer-content">
+          <p>© 2026 Florería Amelia. Hecho con ❤️ en Huancayo.</p>
+          <div class="footer-links">
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Política de privacidad</a>
+            <a href="#">Política de devoluciones</a>
+          </div>
         </div>
-      </div>
+      </footer>
 
-      <div class="catalogo-layout">
-        <section id="productGrid" aria-live="polite" aria-busy="false">
-          <!-- Tarjetas por JS -->
-        </section>
-      </div>
-    </main>
-
-
-    <!-- TEMPLATE DE TARJETA -->
-    <template id="tplCard">
-      <article class="card">
-        <div class="card-img-wrap">
-          <img class="card-img" alt="" />
-          <span class="badge-oferta" hidden>EN OFERTA</span>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title"></h4>
-          <p class="card-desc"></p>
-          <div class="card-price-row">
-            <span class="card-price"></span>
-            <span class="card-price-old" hidden></span>
-          </div>
-          <div class="card-cta">
-            <button class="btn-add" type="button">¡Compra ahora!</button>
-          </div>
-        </div>
-      </article>
-    </template>
-
-    <!-- RECORDATORIO SECTION -->
-    <section class="remember" id="remember">
-      <h1 class="heading"><span>RECUERDA</span></h1>
-      <div class="remember-content">
-        <div class="remember-item">
-          <i class="fas fa-hand-holding-heart"></i>
-          <p>Todos los arreglos son hechos a mano</p>
-        </div>
-        <div class="remember-item">
-          <i class="fas fa-palette"></i>
-          <p>Los colores pueden variar ligeramente</p>
-        </div>
-        <div class="remember-item">
-          <i class="fas fa-percentage"></i>
-          <p>No se inicia ningún pedido sin adelanto del 50%</p>
-        </div>
-        <div class="remember-item">
-          <i class="fas fa-ban"></i>
-          <p>No se aceptan devoluciones una vez iniciado el trabajo</p>
-        </div>
-        <div class="remember-item">
-          <i class="fas fa-calendar-alt"></i>
-          <p>Cada pedido se realiza con un mínimo de 2 días de anticipación</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ICONOS - ENVÍO, PAGO Y PRODUCTOS EXTRA -->
-    <section class="icons-container">
-      <div class="icons">
-        <img src="Imágenes/Inicio/icono 1.jpg" alt="Entrega a domicilio">
-        <div class="content-info">
-          <h3>Entraga segura e inmediata</h3>
-          <span>Todo centro de huancayo</span>
-          <span>Con costo extra</span>
-        </div>
-      </div>
-      <div class="icons">
-        <img src="Imágenes/Inicio/icono 2.jpg" alt="Pago contra-entrega y transferencia">
-        <div class="content-info">
-          <h3>Pago efectivo y yape</h3>
-          <span>Compra segura</span>
-        </div>
-      </div>
-      <div class="icons">
-        <img src="Imágenes/Inicio/icono 3.jpg" alt="Productos extra">
-        <div class="content-info">
-          <h3>Productos extra</h3>
-          <span>¡Chocolates y Peluches!</span>
-          <span>Con costo extra</span>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- CLIENTES SATISFECHOS SECTION -->
-    <section class="review" id="review">
-      <h1 class="heading"><span>Clientes Satisfechos</span></h1>
-      <div class="box-container">
-        <div class="box">
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"Las flores llegaron en el tiempo acordado y el arreglo era tal cual la foto. A mi mamá le encantaron
-            mucho. ¡Altamente recomendados!"</p>
-          <div class="user">
-            <i class="fas fa-user-circle"></i>
-            <div class="user-info">
-              <h3>Alejandro García Mendoza</h3>
-              <span>Cliente Satisfecho</span>
-            </div>
-          </div>
-          <span class="fas fa-quote-right"></span>
-        </div>
-
-        <div class="box">
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"Excelente servicio y entrega puntual en Huancayo. El proceso de compra por la web fue muy sencillo y
-            rápido."</p>
-          <div class="user">
-            <i class="fas fa-user-circle"></i>
-            <div class="user-info">
-              <h3>Sofía Rodríguez Castro</h3>
-              <span>Cliente Satisfecho</span>
-            </div>
-          </div>
-          <span class="fas fa-quote-right"></span>
-        </div>
-
-        <div class="box">
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"Los arreglos son hermosos, se nota el amor que le ponen a cada detalle. Sin duda volveré a comprar aquí
-            para mis fechas especiales."</p>
-          <div class="user">
-            <i class="fas fa-user-circle"></i>
-            <div class="user-info">
-              <h3>Mateo Fernández Silva</h3>
-              <span>Cliente Satisfecho</span>
-            </div>
-          </div>
-          <span class="fas fa-quote-right"></span>
-        </div>
-
-        <div class="box">
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"Increíble calidad. Me sorprendió gratamente el servicio al cliente."</p>
-          <div class="user">
-            <i class="fas fa-user-circle"></i>
-            <div class="user-info">
-              <h3>Valentina López Herrera</h3>
-              <span>Cliente Satisfecho</span>
-            </div>
-          </div>
-          <span class="fas fa-quote-right"></span>
-        </div>
-
-        <div class="box">
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"Muy buena atención, resolvieron todas mis dudas por WhatsApp de inmediato. ¡El pedido llegó perfecto!"</p>
-          <div class="user">
-            <i class="fas fa-user-circle"></i>
-            <div class="user-info">
-              <h3>Sebastián Martínez Rojas</h3>
-              <span>Cliente Satisfecho</span>
-            </div>
-          </div>
-          <span class="fas fa-quote-right"></span>
-        </div>
-
-        <div class="box">
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"Lo que más valoro es la calidez humana; me asesoraron por WhatsApp con mucha paciencia.
-            Se nota la dedicación en cada detalle, ¡mi pedido llegó impecable y antes de lo esperado!"</p>
-          <div class="user">
-            <i class="fas fa-user-circle"></i>
-            <div class="user-info">
-              <h3>Andrés Mendoza Reyes</h3>
-              <span>Cliente Satisfecho</span>
-            </div>
-          </div>
-          <span class="fas fa-quote-right"></span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACTO SECTION -->
-    <section class="contact" id="Contacto">
-      <h1 class="heading"><span>Contacto</span></h1>
-      <div class="row">
-        <div class="contact-info">
-          <h3>¡Entrega en todo Centro Huancayo!</h3>
-          <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <strong>Dirección</strong>
-              <p>Parque constitución huancayo<br></p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-phone"></i>
-            <div>
-              <strong>Teléfono</strong>
-              <p>+51 915 995 014</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-clock"></i>
-            <div>
-              <strong>Horarios</strong>
-              <p>Todos los dias 9:00 AM - 6:00 PM, solo escribenos al +51 915 995 014</p>
-            </div>
-          </div>
-          <div class="info-item">
-            <i class="fas fa-store"></i>
-            <div>
-              <strong>Florería</strong>
-              <p>Tu floristería de confianza en el corazón de huancayo</p>
-            </div>
-          </div>
-        </div>
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7803.284377012179!2d-75.2196068!3d-12.0681219!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910e964f02c2119b%3A0x3d691fe5db0982cf!2sPlaza%20de%20la%20Constituci%C3%B3n!5e0!3m2!1ses!2spe!4v1770725557174!5m2!1ses!2spe"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="checkout-footer">
-      <div class="footer-content">
-        <p>© 2026 Florería Amelia. Hecho con ❤️ en Huancayo.</p>
-        <div class="footer-links">
-          <a href="#">Términos y condiciones</a>
-          <a href="#">Política de privacidad</a>
-          <a href="#">Política de devoluciones</a>
-        </div>
-      </div>
-    </footer>
-
-  </body>
+    </body>
+  </div><!-- Cierre de main-content -->
 
 </html>

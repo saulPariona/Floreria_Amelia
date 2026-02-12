@@ -424,12 +424,75 @@ header {
   border-radius: 12px;
 }
 
+/* ===== LAZY LOADING - SKELETON LOADER ===== */
+.skeleton-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 .card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  display: block
+  display: block;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+/* Imagen cargada - efecto fade-in profesional */
+.card-img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Optimización para usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .card-img {
+    transition: opacity 0.3s ease;
+    transform: scale(1);
+  }
+  
+  .skeleton-loader {
+    animation: none;
+    background: #e0e0e0;
+  }
+}
+
+/* Efecto hover mejorado en la tarjeta */
+.card:hover .card-img.loaded {
+  transform: scale(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .card-img.loaded {
+    transform: scale(1);
+  }
 }
 
 .badge-oferta {

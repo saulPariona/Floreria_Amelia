@@ -282,13 +282,61 @@ function render() {
   if ($count) $count.textContent = `${totalMostrados} producto${totalMostrados !== 1 ? "s" : ""}`;
 
   $grid.setAttribute("aria-busy", "false");
+  
+  // Inicializar lazy loading para todas las imágenes recién agregadas
+  initLazyLoading();
+}
+
+/* ====== LAZY LOADING CON INTERSECTION OBSERVER ====== */
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      const skeleton = img.nextElementSibling;
+      
+      // Cargar la imagen real
+      img.src = img.dataset.src;
+      
+      img.onload = () => {
+        img.classList.add('loaded');
+        if (skeleton && skeleton.classList.contains('skeleton-loader')) {
+          skeleton.style.display = 'none';
+        }
+      };
+      
+      img.onerror = () => {
+        img.src = 'https://placehold.co/600x450?text=Flores';
+        img.classList.add('loaded');
+        if (skeleton && skeleton.classList.contains('skeleton-loader')) {
+          skeleton.style.display = 'none';
+        }
+      };
+      
+      observer.unobserve(img);
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '50px', // Comenzar a cargar 50px antes de ser visible
+  threshold: 0.01
+});
+
+/* ====== INICIALIZAR LAZY LOADING ====== */
+function initLazyLoading() {
+  const lazyImages = document.querySelectorAll('.lazy-img:not([data-observed])');
+  lazyImages.forEach(img => {
+    img.dataset.observed = 'true';
+    imageObserver.observe(img);
+  });
 }
 
 /* ====== CREA TARJETA Y CONEXIÓN AL CARRITO ====== */
 function buildCard(p) {
   const $card = tpl.content.cloneNode(true);
   const img = $card.querySelector(".card-img");
-  img.src = p.img || "https://placehold.co/600x450?text=Flores";
+  
+  // Configurar lazy loading
+  img.dataset.src = p.img || "https://placehold.co/600x450?text=Flores";
   img.alt = p.nombre;
 
   $card.querySelector(".card-title").textContent = p.nombre;
@@ -304,28 +352,19 @@ function buildCard(p) {
     }
   }
 
-  // ✅ Abrir WhatsApp con información del producto
   $card.querySelector(".btn-add").addEventListener("click", (ev) => {
     ev.preventDefault();
-
-    // Crear mensaje para WhatsApp
     const mensaje = `Hola! Me interesa el siguiente producto:%0A%0A` +
       `*${p.nombre}*%0A` +
       `Precio: S/${p.precio}.99 SOLES%0A%0A` +
       `¿Está disponible?`;
-
-    // Número de WhatsApp (sin espacios ni signos +)
     const numeroWhatsApp = "51915995014";
-
-    // Abrir WhatsApp
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
     window.open(urlWhatsApp, '_blank');
   });
 
   return $card;
 }
-
-/* ====== UTILIDADES ====== */
 function idFromTitle(t) {
   return t
     .toLowerCase()

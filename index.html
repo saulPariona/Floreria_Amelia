@@ -169,7 +169,8 @@
 
         <div class="row">
           <div class="imagen-container">
-            <img src="Imágenes/Inicio/Flor_morada.png" alt="Ramos Sarahi Amelia">
+            <img class="lazy-img-about" data-src="Imágenes/Inicio/Flor_morada.png" alt="Ramos Sarahi Amelia" loading="lazy">
+            <div class="skeleton-loader-about"></div>
             <h3>✨ "Tu confianza es nuestro motor"</h3>
           </div>
 
@@ -267,7 +268,8 @@
       <template id="tplCard">
         <article class="card">
           <div class="card-img-wrap">
-            <img class="card-img" alt="" />
+            <img class="card-img lazy-img" data-src="" alt="" loading="lazy" />
+            <div class="skeleton-loader"></div>
             <span class="badge-oferta" hidden>EN OFERTA</span>
           </div>
           <div class="card-body">

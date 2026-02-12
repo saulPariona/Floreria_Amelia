@@ -1,3 +1,44 @@
+/* ========== LAZY LOADING PARA IMAGEN ABOUT ========== */
+const aboutImageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      const skeleton = img.nextElementSibling;
+      
+      // Cargar la imagen real
+      img.src = img.dataset.src;
+      
+      img.onload = () => {
+        img.classList.add('loaded');
+        if (skeleton && skeleton.classList.contains('skeleton-loader-about')) {
+          skeleton.style.display = 'none';
+        }
+      };
+      
+      img.onerror = () => {
+        img.src = 'Imágenes/Inicio/Flor_morada.png';
+        img.classList.add('loaded');
+        if (skeleton && skeleton.classList.contains('skeleton-loader-about')) {
+          skeleton.style.display = 'none';
+        }
+      };
+      
+      observer.unobserve(img);
+    }
+  });
+}, {
+  root: null,
+  rootMargin: '100px',
+  threshold: 0.01
+});
+
+// Observar la imagen de la sección about
+const aboutImg = document.querySelector('.lazy-img-about');
+if (aboutImg) {
+  aboutImageObserver.observe(aboutImg);
+}
+
+/* ========== CAROUSEL ========== */
 class AutoCarousel {
   constructor() {
     this.slides = document.querySelectorAll('.slide');

@@ -78,6 +78,15 @@ section {
   }
 }
 
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 /* ========== HEADER Y NAVEGACIÓN ========== */
 header {
   position: fixed;
@@ -465,6 +474,7 @@ body.carrito header {
   position: relative;
   max-width: 600px;
   margin-right: 4rem;
+  overflow: hidden;
 }
 
 .about .row .imagen-container img {
@@ -475,6 +485,53 @@ body.carrito header {
   box-shadow: 0 .5rem 1rem var(--gris-oscuro);
   object-fit: cover;
   display: block;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease-out, transform 1s ease-out;
+}
+
+/* Imagen cargada en sección about */
+.about .row .imagen-container img.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Skeleton loader para sección about */
+.skeleton-loader-about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  z-index: 1;
+  border-radius: 0.5rem;
+}
+
+/* Efecto hover mejorado */
+.about .row .imagen-container:hover img.loaded {
+  transform: scale(1.02);
+}
+
+/* Optimización para usuarios que prefieren reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .about .row .imagen-container img {
+    transition: opacity 0.3s ease;
+    transform: scale(1) !important;
+  }
+  
+  .skeleton-loader-about {
+    animation: none;
+    background: #e0e0e0;
+  }
 }
 
 .about .row .imagen-container h3 {
@@ -488,6 +545,7 @@ body.carrito header {
   font-size: 2rem;
   mix-blend-mode: none;
   color: var(--blanco);
+  z-index: 2;
 }
 
 .about .row .content {

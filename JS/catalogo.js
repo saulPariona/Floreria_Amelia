@@ -15,7 +15,7 @@ const PRODUCTS = [
     nombre: "Rosa y Margarita",
     desc: "Rosa eterna central tejida en rojo pasión, acompañada de margaritas blancas con centros amarillos. Estilo artesanal con limpiapipas.(1 rosa, 3 margaritas,1 eucalipto,Envoltura coreana rojo, cinta blanca)",
     precio: 13,
-    categoria: "Ramos Florales",
+    categoria: "San Valentín",
     tipo: "Rosas",
     etiquetas: ["Eterno", "Rojo"],
     oferta: true,
@@ -27,7 +27,7 @@ const PRODUCTS = [
     nombre: "Girasol y Margarita",
     desc: "Girasol artesanal radiante con pétalos amarillos y margaritas de relleno. Envoltorio estilo periódico vintage y lazo dorado.(1 girasol, 3 margaritas,1 eucalipto,Envoltura coreana marrón, cinta dorada)",
     precio: 16,
-    categoria: "Ramos Florales",
+    categoria: "San Valentín",
     tipo: "Girasoles",
     etiquetas: ["Popular", "Amarillo"],
     oferta: true,
@@ -39,7 +39,7 @@ const PRODUCTS = [
     nombre: "Rosa y Margarita Especial",
     desc: "Gran Lirio central en tono borgoña aterciopelado con margaritas blancas a crochet. Presentación premium con papel coreano blanco.(1 Lirio,2 Tulipanes,6 Flores pequeñas, 1 eucalipto, Envoltorio coreano blanco,un lazo  lazo de satén)",
     precio: 27,
-    categoria: "Ramos Florales",
+    categoria: "San Valentín",
     tipo: "Mixto",
     etiquetas: ["Elegante"],
     oferta: false,
@@ -50,7 +50,7 @@ const PRODUCTS = [
     nombre: "Rosa azul y Margarita",
     desc: "Bouquet temático con tulipanes azules y lirio central. Simboliza lealtad y serenidad. Acabado en papel azul y blanco.(1 Lirio central celeste, 3 Tulipanes azul rey, 3 Margaritas blancas, Tallos y hojas verdes, Papel coreano bitono blanco/azul, Cinta de satén crema)",
     precio: 29,
-    categoria: "San Valentín",
+    categoria: "Ramos Florales",
     tipo: "Azul",
     etiquetas: ["Romántico", "Exclusivo"],
     oferta: true,
@@ -62,7 +62,7 @@ const PRODUCTS = [
     nombre: "Lirios y Rosa Morada",
     desc: "Combinación de lirios blancos y rosa morada profunda.(2 Lirios centrales blancos, 1 Rosa púrpura, 2 Lirios morados, 2 Tulipanes púrpura en punta, Varillas de flores pequeñas blancas tipo (bolita), Hojas verdes tejidas, Papel coreano color morado intenso, Cinta de encaje lila con diseño floral)",
     precio: 29,
-    categoria: "San Valentín",
+    categoria: "Ramos Florales",
     tipo: "Crochet",
     etiquetas: ["Handmade", "Lavanda"],
     oferta: true,
@@ -74,12 +74,60 @@ const PRODUCTS = [
     nombre: "Lirios y Rosa Rosado",
     desc: "Ramo romántico con lirios blancos y rosa central rosada.(2 Lirios blancos centrales, 4 Rosas rosadas, 2 Capullos de tulipán blancos, Hojas verdes tejidas, Envoltura de papel tipo periódico vintage, Papel de seda blanco interno, Cinta de satén color crema)",
     precio: 29,
-    categoria: "San Valentín",
+    categoria: "Ramos Florales",
     tipo: "Premium",
     etiquetas: ["Tierno", "Regalo"],
     oferta: true,
     precioAntes: 33,
     img: "Imágenes/catalogo/Tulipanes_rosadas.jpg"
+  },
+  {
+    id: "s4",
+    nombre: "Lirios y Margarita",
+    desc: "Ramo romántico con lirios blancos y Margaritas Rosas.(1 Lirios blancos centrales, 3   Margaritas Rosas, 1 Eucalipto, Envoltura coreana blanco y Rosado, cinta de satén color crema)",
+    precio: 17,
+    categoria: "San Valentín",
+    tipo: "Premium",
+    etiquetas: ["Tierno", "Regalo"],
+    oferta: true,
+    precioAntes: 22,
+    img: "Imágenes/catalogo/Lirio_Margarita.png"
+  },
+  {
+    id: "s5",
+    nombre: "Gerbera y Tulipán",
+    desc: "Ramo romántico con Gerbera y Tulipán(1 Gerbera central, 1   Tulipán, 3 Margaritas, 1 Eucalipto, Envoltura coreana blanco y Rosado, cinta de satén color crema)",
+    precio: 19,
+    categoria: "San Valentín",
+    tipo: "Premium",
+    etiquetas: ["Tierno", "Regalo"],
+    oferta: true,
+    precioAntes: 24,
+    img: "Imágenes/catalogo/Gerbera_Tulipan.png"
+  },
+  {
+    id: "s6",
+    nombre: "Ramo de Flores",
+    desc: "Ramo romántico de flores(1 lirio central, 1   Tulipán, 1 Rosa, 2 Eucalipto, Envoltura coreana blanco y Rosado, cinta de satén color Rosa)",
+    precio: 27,
+    categoria: "Ramos Florales",
+    tipo: "Premium",
+    etiquetas: ["Tierno", "Regalo"],
+    oferta: true,
+    precioAntes: 32,
+    img: "Imágenes/catalogo/Ramo_Flores.png"
+  },
+  {
+    id: "s7",
+    nombre: "Ramo de Rosas",
+    desc: "Ramo romántico de Rosas(3 Rosas, Envoltura coreana Negro, cinta de satén color Roja)",
+    precio: 27,
+    categoria: "Ramos Florales",
+    tipo: "Premium",
+    etiquetas: ["Tierno", "Regalo"],
+    oferta: true,
+    precioAntes: 32,
+    img: "Imágenes/catalogo/Ramo_Rosas.png"
   }
 ];
 
@@ -88,13 +136,20 @@ const PRODUCTS = [
 const $grid = document.getElementById("productGrid");
 const $search = document.getElementById("searchInput");
 const $count = document.getElementById("countLabel");
+const $categoriaFilter = document.getElementById("categoriaFilter");
+const $ordenarPrecio = document.getElementById("ordenarPrecio");
 const tpl = document.getElementById("tplCard");
 
 /* ====== STATE Y SECCIONES ====== */
-const state = { texto: "" };
+const state = {
+  texto: "",
+  categoria: "todas",
+  ordenamiento: "default"
+};
+
 const SECCIONES = [
-  "Ramos Florales",
-  "San Valentín"
+  "San Valentín",
+  "Ramos Florales"
 ];
 
 /* ====== BUSCADOR ====== */
@@ -103,20 +158,50 @@ $search?.addEventListener("input", (e) => {
   render();
 });
 
+/* ====== FILTRO DE CATEGORÍA ====== */
+$categoriaFilter?.addEventListener("change", (e) => {
+  state.categoria = e.target.value;
+  render();
+});
+
+/* ====== ORDENAMIENTO POR PRECIO ====== */
+$ordenarPrecio?.addEventListener("change", (e) => {
+  state.ordenamiento = e.target.value;
+  render();
+});
+
 /* ====== RENDER POR SECCIONES ====== */
 function render() {
   $grid.setAttribute("aria-busy", "true");
   $grid.innerHTML = "";
 
-  const filtrados = state.texto
+  // 1. Filtrar por búsqueda de texto
+  let filtrados = state.texto
     ? PRODUCTS.filter(p => (p.nombre + " " + (p.desc || "")).toLowerCase().includes(state.texto))
     : PRODUCTS.slice();
 
+  // 2. Filtrar por categoría seleccionada
+  if (state.categoria !== "todas") {
+    filtrados = filtrados.filter(p => p.categoria === state.categoria);
+  }
+
+  // 3. Ordenar según criterio seleccionado
+  if (state.ordenamiento === "precio-asc") {
+    filtrados.sort((a, b) => a.precio - b.precio);
+  } else if (state.ordenamiento === "precio-desc") {
+    filtrados.sort((a, b) => b.precio - a.precio);
+  }
+
   let totalMostrados = 0;
 
-  SECCIONES.forEach(cat => {
+  // Determinar qué secciones mostrar
+  const seccionesAMostrar = state.categoria === "todas"
+    ? SECCIONES
+    : [state.categoria];
+
+  seccionesAMostrar.forEach(cat => {
     let items = filtrados.filter(p => p.categoria === cat);
-    if (!state.texto) items = items.slice(0, 4); // limitar si no hay búsqueda
+    if (!state.texto && state.categoria === "todas") items = items.slice(0, 12); // limitar si no hay búsqueda ni filtro
     if (items.length === 0) return;
 
     const section = document.createElement("section");
@@ -174,16 +259,16 @@ function buildCard(p) {
   // ✅ Abrir WhatsApp con información del producto
   $card.querySelector(".btn-add").addEventListener("click", (ev) => {
     ev.preventDefault();
-    
+
     // Crear mensaje para WhatsApp
     const mensaje = `Hola! Me interesa el siguiente producto:%0A%0A` +
-                   `*${p.nombre}*%0A` +
-                   `Precio: S/${p.precio}.99 SOLES%0A%0A` +
-                   `¿Está disponible?`;
-    
+      `*${p.nombre}*%0A` +
+      `Precio: S/${p.precio}.99 SOLES%0A%0A` +
+      `¿Está disponible?`;
+
     // Número de WhatsApp (sin espacios ni signos +)
     const numeroWhatsApp = "51915995014";
-    
+
     // Abrir WhatsApp
     const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
     window.open(urlWhatsApp, '_blank');

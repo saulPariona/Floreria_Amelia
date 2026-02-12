@@ -92,20 +92,13 @@
       <input type="checkbox" id="toggler">
       <label for="toggler" class="fas fa-bars"></label>
 
-      <a href="#home" class="logofloreria"><img src="Imágenes/Inicio/Bellafiora_logo.png"></a>
+      <a href="#home" class="logofloreria"><img src="Imágenes/Inicio/Bellafiora_logo.png"
+          alt="Logo Florería Amelia"></a>
 
       <nav class="navbar">
         <a href="#home">Inicio</a>
         <a href="#about">Nosotros</a>
-
-        <div class="dropdown">
-          <button class="dropdown-btn" type="button" aria-expanded="false">Arreglos Florales</button>
-          <div class="dropdown-content" role="menu">
-            <a href="#ramos-florales" role="menuitem">Ramos Florales</a>
-            <a href="#san-valentin" role="menuitem">San Valentín</a>
-          </div>
-        </div>
-
+        <a href="#catalogo">Catálogo</a>
         <a href="#review">Clientes</a>
         <a href="#Contacto">Contacto</a>
       </nav>
@@ -166,7 +159,8 @@
         <div class="content">
           <h3>Hacemos que tu persona especial se sienta única</h3>
           <p>
-            ¡Hola! Soy <strong>Sarai Amelia Araujo Felipe</strong>. Iniciamos este camino con un compromiso inquebrantable: ser el
+            ¡Hola! Soy <strong>Sarai Amelia Araujo Felipe</strong>. Iniciamos este camino con un compromiso
+            inquebrantable: ser el
             puente entre tus sentimientos y esa persona que tanto quieres. Sabemos que no solo entregas flores, entregas
             un abrazo, una disculpa o un "te amo". Por eso, nosotros nos obsesionamos con que cada pétalo llegue
             perfecto.
@@ -202,7 +196,7 @@
         </div>
       </div>
     </section>
-    
+
 
     <!-- CATÁLOGO SECTION -->
     <main class="catalogo" id="catalogo">
@@ -213,6 +207,31 @@
           <i class="fa-solid fa-magnifying-glass"></i>
           <input id="searchInput" type="search" placeholder="Buscar productos…" aria-label="Buscar productos" />
         </div>
+
+        <div class="filtros-container">
+          <div class="filtro-grupo">
+            <label for="categoriaFilter">
+              <i class="fa-solid fa-filter"></i> Categoría:
+            </label>
+            <select id="categoriaFilter" aria-label="Filtrar por categoría">
+              <option value="todas">Todas las categorías</option>
+              <option value="San Valentín">San Valentín</option>
+              <option value="Ramos Florales">Ramos Florales</option>
+            </select>
+          </div>
+
+          <div class="filtro-grupo">
+            <label for="ordenarPrecio">
+              <i class="fa-solid fa-sort-amount-down"></i> Ordenar:
+            </label>
+            <select id="ordenarPrecio" aria-label="Ordenar por precio">
+              <option value="default">Por defecto</option>
+              <option value="precio-asc">Precio: Menor a Mayor</option>
+              <option value="precio-desc">Precio: Mayor a Menor</option>
+            </select>
+          </div>
+        </div>
+
         <div class="toolbar-meta">
           <span id="countLabel">0 productos</span>
         </div>
@@ -313,7 +332,8 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p>"Las flores llegaron en el tiempo acordado y el arreglo era tal cual la foto. A mi mamá le encantaron mucho. ¡Altamente recomendados!"</p>
+          <p>"Las flores llegaron en el tiempo acordado y el arreglo era tal cual la foto. A mi mamá le encantaron
+            mucho. ¡Altamente recomendados!"</p>
           <div class="user">
             <i class="fas fa-user-circle"></i>
             <div class="user-info">
@@ -332,7 +352,8 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p>"Excelente servicio y entrega puntual en Huancayo. El proceso de compra por la web fue muy sencillo y rápido."</p>
+          <p>"Excelente servicio y entrega puntual en Huancayo. El proceso de compra por la web fue muy sencillo y
+            rápido."</p>
           <div class="user">
             <i class="fas fa-user-circle"></i>
             <div class="user-info">
@@ -350,7 +371,8 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <p>"Los arreglos son hermosos, se nota el amor que le ponen a cada detalle. Sin duda volveré a comprar aquí para mis fechas especiales."</p>
+          <p>"Los arreglos son hermosos, se nota el amor que le ponen a cada detalle. Sin duda volveré a comprar aquí
+            para mis fechas especiales."</p>
           <div class="user">
             <i class="fas fa-user-circle"></i>
             <div class="user-info">
@@ -398,6 +420,27 @@
           </div>
           <span class="fas fa-quote-right"></span>
         </div>
+
+        <div class="box">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p>"Lo que más valoro es la calidez humana; me asesoraron por WhatsApp con mucha paciencia.
+            Se nota la dedicación en cada detalle, ¡mi pedido llegó impecable y antes de lo esperado!"</p>
+          <div class="user">
+            <i class="fas fa-user-circle"></i>
+            <div class="user-info">
+              <h3>Andrés Mendoza Reyes</h3>
+              <span>Cliente Satisfecho</span>
+            </div>
+          </div>
+          <span class="fas fa-quote-right"></span>
+        </div>
+
       </div>
     </section>
 

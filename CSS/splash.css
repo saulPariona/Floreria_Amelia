@@ -57,5 +57,5 @@ body.splash-loaded .main-content {
 }
 
 body.splash-loaded .main-content {
-    animation: fadeInContent 0.8s ease-out;
+    animation: fadeInContent 0.10s ease-out;
 }
